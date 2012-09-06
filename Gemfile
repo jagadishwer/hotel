@@ -5,7 +5,7 @@ gem 'rails', '3.2.6'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pg'
-gem 'mysql'
+gem 'mysql2'
 gem 'paperclip'
 gem 'json'
 #gem 'uploadify-rails'
