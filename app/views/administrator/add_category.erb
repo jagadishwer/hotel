@@ -1,0 +1,7 @@
+<%=form_tag(:action=>"add_category") do -%>
+  <table>
+    <tr><td>Category Name:</td>
+      <td><%=text_field_tag "category[name]"%></td></tr>
+    <tr><td><%=submit_tag "save"%></td></tr>
+  </table>
+<%end-%>

@@ -1,0 +1,7 @@
+<%if !@admin_content["gallery"].nil?%>
+<%@admin_content["gallery"].each do|g|%>
+
+<%= image_tag g.photo.url(:thumb) %>
+
+<%end%>
+<%end%>

@@ -1,0 +1,13 @@
+<%=form_tag(:action=>"add_contact") do-%>
+<table>
+  <tr><td>Mobile No:</td><td><%=text_field_tag "contact[mobile_no]"%></td></tr>
+  <tr><td>Landline No:</td><td><%=text_field_tag "contact[landline_no]"%></td></tr>
+  <tr><td>House No:</td><td><%=text_field_tag "contact[house_no]"%></td></tr>
+  <tr><td>Street:</td><td><%=text_field_tag "contact[street]"%></td></tr>
+  <tr><td>City:</td><td><%=text_field_tag "contact[city]"%></td></tr>
+  <tr><td>State:</td><td><%=text_field_tag "contact[state]"%></td></tr>
+  <tr><td>Country:</td><td><%=text_field_tag "contact[country]"%></td></tr>
+  <tr><td>Pincode:</td><td><%=text_field_tag "contact[pincode]"%></td></tr>
+  <tr><td><%=submit_tag "save"%></td></tr>
+</table>
+<%end-%>

@@ -1,0 +1,13 @@
+<table>
+
+  <%=form_tag(:action=>"add_item") do-%>
+
+    <tr><td>Item Name: </td><td> <%=text_field_tag "item[name]"%></td></tr>
+    <tr><td>Price:</td><td><%=text_field_tag "item[price]"%> </td></tr>
+    <tr><td>Description: </td><td><%=text_area_tag "item[description]"%> </td></tr>
+    <tr><td>Category </td><td><%=text_field_tag "category_name"%> </td></tr>
+    <tr> <td><%=submit_tag "save"%></td></tr>
+
+  <%end-%>
+
+</table>

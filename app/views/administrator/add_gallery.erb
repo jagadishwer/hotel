@@ -1,0 +1,29 @@
+<table>
+  <tr><td> gallery_image: </td></tr>
+  <tr ><td><i><p><button>add_image</button></p></i></td></tr>
+<%=form_tag({:action=>"add_gallery"},:multipart=>true) do-%>
+
+
+  
+
+
+  <%(1..3).each do|i| %>
+  <tr><td class="i"><%=file_field :gallery, i.to_s %></td></tr>
+<%end%>
+  
+  <tr><td><%=submit_tag 'save'%></td></tr>
+
+<tr><td><%= render 'gallery' %></td></tr>
+</table>
+
+<%end-%>
+
+
+<%#=form_for :admin, :html=>{:multipart=>true} do |f|%>
+<%#5.times {@admin.galleries.build} %>
+  <%#=f.fields_for :galleries do |gallery|%>
+    <%#=gallery.file_field :photo%>
+  
+<%#end%>
+<%#=submit_tag 'create'%>
+<%#end%>

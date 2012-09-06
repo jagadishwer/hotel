@@ -1,0 +1,8 @@
+<%=form_tag({:action=>"add_logo"},:multipart=>true) do-%>
+<table>
+
+  <tr><td>Logo : </td> <td><%=file_field_tag 'logo[photo]'%></td></tr>
+  <tr><td><%=submit_tag 'save'%></td></tr>
+  
+</table>
+<%end-%>

@@ -1,0 +1,13 @@
+<table>
+
+  <%=form_tag(:action=>"add_tax") do -%>
+
+  <tr>
+    <td>Tax:</td>
+    <td><%=text_field_tag "tax[value]"%></td>
+    <td><%=submit_tag "save"%></td>
+  </tr>
+
+<%end-%>
+
+</table>

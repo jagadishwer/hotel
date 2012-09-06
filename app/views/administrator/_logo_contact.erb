@@ -1,0 +1,15 @@
+<table cellpadding="15">
+  <%if !@admin_content["logo"].nil?%>
+    <tr ><td align="right"><%= image_tag @admin_content["logo"].photo.url(:thumb) %></td></tr>
+  <%end%>
+  <%if !@admin_content["contact"].nil?%>
+    <tr><td >Mobile:</td><td><%= @admin_content["contact"].mobile_no %></td></tr>
+    <tr><td>LandLine:</td><td><%= @admin_content["contact"].landline_no %></td></tr>
+    <tr><td>House No:</td><td><%= @admin_content["contact"].house_no %></td></tr>
+    <tr><td>Street :</td><td><%= @admin_content["contact"].street %></td></tr>
+    <tr><td>City :</td><td><%= @admin_content["contact"].city %></td></tr>
+    <tr><td>State :</td><td><%= @admin_content["contact"].state %></td></tr>
+    <tr><td>Country :</td><td><%= @admin_content["contact"].country %></td></tr>
+    <tr><td>Pincode :</td><td><%= @admin_content["contact"].pincode %></td></tr>
+  <%end%>
+</table>

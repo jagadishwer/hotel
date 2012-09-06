@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="entire_web_page2">
+      <h1> my web page</h1>
+    </div>
+
+    <div id = "top_part">
+      <table >
+        <tr>
+          <% if admin_signed_in %>
+            <td  bgcolor="#3399FF" ><%= link_to_unless current_page?(:action=>"admin_Signout"),'signout',{:controller=>"administrator",:action=>"admin_signout"} %></td>
+          <% else %>
+            <td  bgcolor="#3399FF" ><%=link_to_unless current_page?(:action=>"admin_signup"),'sign_up',{:controller=>"administrator", :action=> "admin_signup"}%> </td>
+            <td bgcolor="#3399FF"><%=link_to_unless current_page?(:action=>"admin_login"),'login',{:controller=>"administrator", :action=> "admin_login"}%></td>
+          <%end%>
+        </tr>
+      </table>
+    </div>
+
+    <div id= "middle3">
+      <div id = "leftside_part">
+        <%if is_customer_home%>
+          <%=render "logo_contact"%>
+        <%elsif admin_signed_in %>
+          <table>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_logo"),'add_logo',{:controller=>"administrator",:action=>"add_logo"} %></td> </tr>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_gallery"),'add_gallery',{:controller=>"administrator",:action=>"add_gallery"} %></td></tr>
+            <tr><td  bgcolor="#FFFFF3"><%= link_to_unless current_page?(:action=>"add_contact"),'add_contact',{:controller=>"administrator",:action=>"add_contact"} %></td></tr>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_customer"),'add_customer',{:controller=>"administrator",:action=>"add_customer"} %></td></tr>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_category"),'add_category',{:controller=>"administrator",:action=>"add_category"} %></td></tr>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_item"),'add_item',{:controller=>"administrator",:action=>"add_item"} %></td></tr>
+            <tr><td  bgcolor="#FFFFF3" ><%= link_to_unless current_page?(:action=>"add_tax"),'add_tax',{:controller=>"administrator",:action=>"add_tax"} %></td></tr>
+
+          </table>
+        <%end%>
+      </div>
+
+
+      <div id="middle_part">
+        <%= yield %>
+      </div>
+
+
+      <div id = "right_part">
+        <%if is_customer_home||is_admin_home%>
+          <%=render "gallery"%>
+        <%end%>
+
+      </div>
+      <div id= "bottom">
+        <p>@JRB</p>
+      </div>
+
+
+    </div>
+
+
+
+
+  </body>
+
+</html>

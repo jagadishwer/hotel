@@ -1,0 +1,11 @@
+<h2> welcome <%=session[:customer].name%></h2>
+<%=form_tag(:action=>"customer_home") do-%>
+  <%if !@admin_content["item"].nil?%>
+    <%@admin_content["item"].select do |category,items|%>
+      <h3><%=category.name%>:</h3>
+      <%if !items.nil?%>
+        <%=select_tag "customer[items]", options_from_collection_for_select(items,"price","name"),:multiple=>true%>
+      <%end%>
+    <%end%>
+  <%end%>
+<%end-%>
